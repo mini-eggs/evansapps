@@ -31,7 +31,9 @@ const AbsoluteHeader = props => <nav className="mobile mobileMenuToggle">
 </nav>
 
 const Header = props => <header className="desktop-hide mobile-show center">
-	<i className="mobileMenuToggle mobileMenuToggleShow">&times;</i>
+	<i className="mobileMenuToggle mobileMenuToggleShow"
+		dangerouslySetInnerHTML={{ __html:'&times;'}}
+	/>
 	<div className="padding">
 		<div className="inner">
 			<div className="half desktop-left inline">
