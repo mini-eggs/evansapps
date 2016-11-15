@@ -7,7 +7,7 @@ const Store = props => createStore( event => {
 		name:'Evan Jones',
 		desc:'Developer',
 		mobile:'EJ | Dev',
-		logo:'http://i.imgur.com/jpdzBFV.png'
+		logo:'https://i.imgur.com/jpdzBFV.png'
 	} 
 })
 

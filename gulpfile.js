@@ -16,9 +16,10 @@ var uglify = require('gulp-uglify')
 var sourcemaps = require('gulp-sourcemaps')
 var livereload = require('gulp-livereload')
 var htmlmin = require('gulp-htmlmin')
+var replace = require('gulp-replace')
+var fs = require('fs')
 
 var filesCss = [
-    'src/css/material.css',
     'src/css/index.css'
 ]
 
@@ -50,6 +51,20 @@ gulp.task('css', function () {
 
 gulp.task('html', function() {
   return gulp.src('./src/index.php')
+    .pipe(htmlmin({collapseWhitespace: true}))
+    .pipe(gulp.dest('./docs'))
+});
+
+gulp.task('one-file', function() {
+  return gulp.src('./src/index.php')
+    .pipe(replace('<link rel="stylesheet" href="/bundle.min.css">', function(s) {
+          var style = fs.readFileSync('./docs/bundle.min.css', 'utf8');
+          return '<style>\n' + style + '\n</style>';
+      }))
+    .pipe(replace('<script src="/bundle.min.js" async></script>', function(s) {
+          var style = fs.readFileSync('./docs/bundle.min.js', 'utf8');
+          return '<script>\n' + style + '\n</script>';
+      }))
     .pipe(htmlmin({collapseWhitespace: true}))
     .pipe(gulp.dest('./docs'))
 });

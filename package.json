@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build":"NODE_ENV=production gulp",
-    "start":"gulp watch"
+    "build": "NODE_ENV=production gulp",
+    "build-one-file": "NODE_ENV=production gulp && gulp one-file && rm docs/bundle.min.css && rm docs/bundle.min.js",
+    "start": "gulp watch"
   },
   "author": "Evan M Jones",
   "license": "ISC",
@@ -20,6 +21,7 @@
     "gulp-concat-css": "^2.3.0",
     "gulp-htmlmin": "^3.0.0",
     "gulp-livereload": "^3.8.1",
+    "gulp-replace": "^0.5.4",
     "gulp-sourcemaps": "^2.2.0",
     "gulp-uglify": "^2.0.0",
     "gulp-uglifycss": "^1.0.6",
