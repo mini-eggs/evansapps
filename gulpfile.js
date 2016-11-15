@@ -49,7 +49,7 @@ gulp.task('css', function () {
 })
 
 gulp.task('html', function() {
-  return gulp.src('./src/index.html')
+  return gulp.src('./src/index.php')
     .pipe(htmlmin({collapseWhitespace: true}))
     .pipe(gulp.dest('./docs'))
 });

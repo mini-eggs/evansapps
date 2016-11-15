@@ -1,9 +1,1 @@
-import $ from 'jquery'
-
-const getDataUrl = 'http://evanjones.xyz/evanjonesprod/wp-proxy/?type=getJson'
-
-export default props => {
-	return new Promise((resolve, reject) => {
-		$.get(getDataUrl, data => resolve(JSON.parse(data)))
-	})
-}
+export default props => new Promise(resolve => resolve(JSON.parse(window.data)))
