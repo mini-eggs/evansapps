@@ -4,7 +4,9 @@ import {Link} from 'react-router'
 
 const Footer = props => <footer className="padding">
 	<div className="center">
-		<img src={props.logo} />
+		<Link to="/">
+			<img src={props.logo} />
+		</Link>
 		<br/>
 		<a href="https://github.com/mini-eggs">Github</a>
 		•
