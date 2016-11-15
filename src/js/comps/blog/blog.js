@@ -5,7 +5,7 @@ import {Link} from 'react-router'
 
 const BlogPosts = props => <div>
 	{
-		props.data.posts.map((post,index) => <Link to={"/post/" + post.post_name}>
+		props.data.posts.map((post,index) => <Link key={index} to={"/post/" + post.post_name}>
 				<h3>
 					{post.post_title}
 				</h3>

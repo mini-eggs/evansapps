@@ -49,7 +49,7 @@ gulp.task('css', function () {
 })
 
 gulp.task('html', function() {
-  return gulp.src('./src/index.php')
+  return gulp.src('./src/index.html')
     .pipe(htmlmin({collapseWhitespace: true}))
     .pipe(gulp.dest('./docs'))
 });
@@ -57,7 +57,7 @@ gulp.task('html', function() {
 gulp.task('watch', function() {
     gulp.watch('src/js/**/*.*', ['js-dev'])
     gulp.watch('src/css/**/*.*', ['css'])
-    gulp.watch('src/index.php', ['html'])
+    gulp.watch('src/index.html', ['html'])
 })
 
 gulp.task('default', ['js', 'css', 'html'])
